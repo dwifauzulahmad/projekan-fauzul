@@ -1,0 +1,443 @@
+
+@font-face{
+    src: url('Font/KGPrimaryPenmanship.ttf');
+    font-family: MyFont;
+}
+body{
+    background-image: url(/gambar/bg_body.png);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Lapngan */
+
+#navigasi{
+    top: 0;
+    position: sticky;
+}
+
+#head img{
+    height: 70px;
+    width: 300px;
+}
+
+#wl{
+    font-family: MyFont;
+    font-size: 40pt;
+}
+
+#tempat{
+    padding: 20px 30px;
+    border-radius: 0 0 5px 5px;
+    background-color: rgb(219, 218, 218);
+}
+
+.info{
+    font-weight: bold;
+}
+
+#pembungkus div{
+    text-align: center;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    background-color: green;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+}
+
+.img:hover{
+    box-shadow: 2px 2px 5px;
+    transition: .5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.menu{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li{
+    padding: 10px;
+}
+
+nav ul li:hover{
+    background-color: rgb(5, 199, 5);
+    border-radius: 5px;
+}
+
+nav ul li:visited{
+    background-color: rgb(5, 199, 5);
+    border-radius: 5px;
+}
+
+nav ul li a :hover{
+   cursor: pointer;
+}
+
+#main{
+    padding:0 30px;
+}
+
+#pembungkus{
+    padding: 30px;
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
+    height: 350px;
+}
+
+#pembungkus div{
+    width: 33.3%;
+}
+
+#lap1{
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+#lap2{
+    display: block;
+    width:100%;
+    height: 300px;
+}
+
+#lap3{
+    display: block; 
+    width: 100%;
+    height: 300px;
+}
+
+.no_lap{
+    font-weight: bold;
+}
+
+.harga{
+    font-weight: bold;
+}
+
+footer{
+    margin: 10px 0;
+}
+
+#line{
+    width: 100%;
+    border: 1px solid gray;
+}
+
+#copy{
+    display: flex;
+    justify-content: center;
+}
+
+/* Booking */
+#form{
+    height: 40px;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+#cf{
+    width: 70%;
+    margin-top: 30px;
+}
+
+#cf input{
+    border-radius: 5px;
+    outline: none;
+}
+
+#pilihan{
+    padding: 10px 0;
+    border: 1px solid rgb(88, 88, 88);
+    cursor: pointer;
+    margin-left: 330px;
+}
+
+#pilihan:active{
+    outline: none;
+}
+
+#btn{
+    border-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.tdata{
+    font-size: 15px;
+    text-align: center;
+}
+
+
+#head{
+    padding: 5px 100px;
+    background-color: rgb(6, 192, 6);
+}
+
+#pm{
+ padding: 0 3px;   
+}
+
+#mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    align-items: center;
+}
+.input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.kiri{
+    width: 50%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+table{
+    margin-left: 20px;
+}
+.judul{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+.jhead th{
+    padding: 0 ;
+    height: 40px;
+    background-color: green;
+    margin-top: 10px;
+    width: 1000px;
+    border-collapse: collapse;
+}
+td{
+    width: 200px;
+    align-items: center;
+}
+.judul1{
+    color: white;
+}
+.kanan{
+    width: 50%;
+}
+#pembungkus1{
+    border-radius: 20px;
+    background-color: whitesmoke;
+    width: 350px;
+    height: 200px;
+    padding: 70px;
+}
+.pem{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+.box-dua form{
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+.satu1{
+    font-size: 20pt;
+    justify-content: center;
+}
+.inp{
+    width: 300px;
+    height: 40px;
+}
+.next-btn{
+    cursor: pointer;
+    border-radius: 20px;
+    height: 40px;
+}
+.next-btn:hover{
+    background-color: grey;
+}
+.jarak1{
+    margin-left: 30px;
+}
+.jarak2{
+    margin-left: 30px;
+}
+
+/* Riwayat */
+#formr{
+    height: 40px;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+#cfr{
+    width: 70%;
+    margin-top: 30px;
+}
+
+#cfr input{
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnr{
+    border-color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#tabler{
+    margin-top: 10px;
+    width: 1000px;
+    overflow: scroll;
+    border-collapse: collapse;
+}
+
+.trowsr:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#pheadr tr{
+    height: 50px;
+    padding: 0 5px;
+    background-color: green;
+}
+
+#tbodyr tr{
+    height: 50px;
+    background-color: whitesmoke;
+}
+
+#tbodyr td {
+    padding-left: 50px;
+}
+
+.tdatar{
+    font-size: 15px;
+    text-align: center;
+}
+
+.tableheadr{
+    color: white;
+}
+
+#midr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    align-items: center;
+}
+
+#pmr{
+    padding: 0 30px;
+}
+
+/* Transaksi */
+/* #formt{
+    height: 40px;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+#cft{
+    width: 70%;
+    margin-top: 30px;
+}
+
+#cft input{
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnt{
+    border-color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#tablet{
+    margin-top: 10px;
+    width: 1000px;
+    overflow: scroll;
+    border-collapse: collapse;
+}
+
+.trowst:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#pheadt tr{
+    height: 50px;
+    padding: 0 5px;
+    background-color: green;
+}
+
+#tbodyt tr{
+    height: 50px;
+}
+
+.tdatat{
+    font-size: 15px;
+    text-align: center;
+}
+
+.tableheadt{
+    color: white;
+}
+
+#midt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    align-items: center;
+}
+
+#pmt{
+    padding: 0 30px;
+} */
+
+/* Scroll */
+
+#scrol{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    background: none;
+    border: none;
+}
+#scrol:hover{
+    cursor: pointer;
+}
+#scrol.active{
+    opacity: 1;
+}
+#iconA{
+    font-size: 20pt;
+}

@@ -1,0 +1,20 @@
+body{
+    background-image: url(../gambar/bg_body.png);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+}
+h1{
+    margin-left: 500px;
+}
+.al{
+    font-size: large;
+}
+.last{
+    margin-right: 0;
+}

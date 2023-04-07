@@ -1,0 +1,358 @@
+<html>
+  <title>Junk's Futsal</title>
+  <head>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/b61c7a3473.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="head">
+      <img src="../gambar/logo2.png" alt="" />
+    </header>
+    <div>
+      <button id="scrol">
+        <i id="iconA" class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+    <main id="pm">
+      <nav id="navigasi">
+        <ul type="none">
+          <li><a class="menu" href="../index.html">Beranda</a></li>
+          <li><a class="menu" href="index.html">Daftar Booking</a></li>
+          <li>
+            <a class="menu" href="../riwayat/index.html">Riwayat Booking</a>
+          </li>
+          <li><a class="menu" id="logout" href="">LogOut</a></li>
+        </ul>
+      </nav>
+      <div id="mid">
+        <div id="cf">
+          <select name="pilih" id="pilihan" onchange="change()">
+            <option value="NamaTeam">Lapangan</option>
+            <option value="lapangan1">Lapangan 1</option>
+            <option value="lapangan2">Lapangan 2</option>
+            <option value="lapangan3">Lapangan 3</option>
+          </select>
+          <button id="btn" onclick="change()">Search</button>
+        </div>
+        <br />
+        <br />
+        <div class="input">
+          <div class="kiri">
+            <table>
+              <h3 class="judul">Ketersediaan Lapangan Hari Ini</h3>
+              <br />
+              <thead class="jhead">
+                <th class="judul1">Waktu</th>
+                <th class="judul1">Harga</th>
+                <th class="judul1">Status</th>
+              </thead>
+              <tbody id="tableBody"></tbody>
+              <!-- <tr>
+                  <td>00.00 - 01.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>01.00 - 02.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>02.00 - 03.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>03.00 - 04.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>04.00 - 05.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>05.00 - 06.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>06.00 - 07.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr> -->
+              <!-- <tr>
+                  <td id="">07.00 - 08.00</td>
+                  <td>Rp. 75.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>08.00 - 09.00</td>
+                  <td>Rp. 75.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09.00 - 10.00</td>
+                  <td>Rp. 75.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10.00 - 11.00</td>
+                  <td>Rp. 75.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11.00 - 12.00</td>
+                  <td>Rp. 75.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12.00 - 13.00</td>
+                  <td>Rp. 105.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>13.00 - 14.00</td>
+                  <td>Rp. 105.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>14.00 - 15.00</td>
+                  <td>Rp. 105.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15.00 - 16.00</td>
+                  <td>Rp. 105.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>16.00 - 17.00</td>
+                  <td>Rp. 125.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>17.00 - 18.00</td>
+                  <td>Rp. 125.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18.00 - 19.00</td>
+                  <td>Rp. 125.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>19.00 - 20.00</td>
+                  <td>Rp. 125.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>20.00 - 21.00</td>
+                  <td>Rp. 125.000</td>
+                  <td>
+                    data
+                    <a class="jarak1" href="update">Ubah</a>
+                    <a class="jarak1" href="update">Hapus</a>
+                  </td>
+                </tr> -->
+              <!-- <tr>
+                  <td>21.00 - 22.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>22.00 - 23.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>23.00 - 24.00</td>
+                  <td>Rp. 0</td>
+                  <td></td>
+                </tr> -->
+              <!-- </tbody> -->
+            </table>
+          </div>
+          <!-- Batas -->
+          <div class="kanan">
+            <div id="pembungkus1">
+              <div class="pem">
+                <p class="satu1"><b>Junk's Futsal</b></p>
+                <br />
+                <div class="box-dua">
+                  <form name="boking">
+                    <input
+                      class="inp"
+                      type="text"
+                      placeholder="Nama"
+                      name="nama"
+                    />
+                    <input
+                      class="inp"
+                      type="text"
+                      placeholder="Nomor Handphone"
+                      name="sandi"
+                    />
+                    <input
+                      class="inp"
+                      type="text"
+                      placeholder="DP Boking"
+                      name="dp"
+                    />
+                    <button class="next-btn">Boking</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="line"></div>
+      <br />
+      <div id="copy">
+        <p>Copyright © 2023 Dwi Fauzul Ahmad Tanjung</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    logout.onclick = () => {
+      fetch("/api/logout").then((response) => {
+        if (response.ok) {
+          location.href = "/login";
+        }
+      });
+    };
+    function change(e){
+        let value = document.getElementById("pilihan").value
+        const tableBody = document.getElementById("tableBody")
+        tableBody.innerHTML = " "
+        fetch("/api/"+value)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        const tbody = document.querySelector("tbody");
+        data.forEach((m) => {
+          const tr = document.createElement("tr");
+          const jam = document.createElement("td");
+          jam.textContent = m.waktu;
+          tr.appendChild(jam);
+          const harga = document.createElement("td");
+          harga.textContent = m.harga;
+          tr.appendChild(harga);
+          const status = document.createElement("td");
+          status.textContent = m.status;
+          tr.appendChild(status);
+          const edit = document.createElement("td");
+          const edittext = document.createElement("a");
+          edittext.textContent = "Boking";
+          edittext.href = `/edit?kode=${m.id}&&lapangaBerapa=${value}`;
+          edit.appendChild(edittext);
+          tr.appendChild(edit);
+          const reset = document.createElement("td");
+          const resetbtn = document.createElement("button");
+          const resettext = document.createElement("a");
+          resettext.textContent = "Reset";
+          resetbtn.appendChild(resettext);
+          reset.appendChild(resetbtn);
+          tr.appendChild(reset);
+          resetbtn.onclick = () => {
+            if (
+              confirm(
+                `Apakah Anda yakin ingin mereset booking dari ${m.nama} (${m.no_hp})?`
+              )
+            ) {
+              fetch(`/api/editdelete/${m.kode}`, {
+                method: "PUT",
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              });
+              location.reload();
+            }
+          };
+          // const dlt = document.createElement("td");
+          // const dltbutton = document.createElement("button");
+          // const dltText = document.createElement("a");
+          // dltbutton.appendChild(dltText);
+          // dlt.appendChild(dltbutton);
+          // tr.appendChild(dlt);
+          // dltText.textContent = "Delete";
+          // dltbutton.onclick = () => {
+          //   if (
+          //     confirm(
+          //       `Apakah Anda yakin ingin menghapus jadwal ${m.waktu} (${m.harga})?`
+          //     )
+          //   ) {
+          //     fetch(`/api/delete/${m.kode}`, {
+          //       method: "DELETE",
+          //       headers: {
+          //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+          //       },
+          //     });
+          //     location.reload();
+          //   }
+          // };
+          tbody.appendChild(tr);
+        });
+      });
+    }
+  </script>
+</html>

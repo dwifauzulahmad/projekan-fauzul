@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junk's Futsal</title>
+    <link rel="stylesheet" href="../assets/regis.css">
+</head>
+<body>
+  <div class="bagian-container">
+    <div class="box-seluruh box-satu">
+      <p class="judul-satu"><b>Buat Akun</b></p>
+      <form name="daftar">
+        <input type="text" placeholder="Masukkan Username" name="nama">
+        <input type="password" placeholder="Masukkan Kata Sandi" name="sandi">
+        <input type="text" placeholder="Masukkan Nomor Handphone" name="nope">
+        <label for="" style="flex:auto">Masukkan Tanggal Lahir
+        <br>
+        <br>
+        Ini tidak akan ditampilkan secara publik. Konfirmasikan usia Anda sendiri, 
+        bahkan jika akun ini digunakan untuk bisnis, hewan peliharaan atau 
+        tujuan lainnya
+        </label>
+        <button class="button-Satu" type="submit">Daftar</button>
+        <button class="button-Dua">Kembali</button>
+      </form>
+    </div>
+  </div>
+    <script>
+        document.daftar.onsubmit = async (e) => {
+          e.preventDefault();
+          await fetch("/api/regis", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              nama: document.daftar.nama.value,
+              sandi: document.daftar.sandi.value,
+              no_hp: document.daftar.nope.value,
+            }),
+          }).then(async (res) => {
+            if(res.ok){
+              location.href="/login";
+            }else{
+              const message = await res.text();
+              alert(message);
+            }
+          })
+        // location.href = "../login/";
+        };
+      </script>
+</body>
+</html>
+</body>
+</html>

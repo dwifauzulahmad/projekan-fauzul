@@ -1,0 +1,81 @@
+body{
+    background-image: url(../gambar/bg_body.png);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+}
+.judul-satu{
+    font-size: x-large;
+}
+.bagian-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 500px;
+    height: 550px;
+    border-radius: 30px;
+    box-shadow: 0 10px rgp(110, 110, 110,.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'poppins', sans-serif;
+}
+.box-seluruh{
+    width: 400px;
+    height: 240px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.box-satu input{
+    position: relative;
+    width: 375px;
+    height: 50px;
+    outline: none;
+    border: 1px solid rgb(211, 210, 210);
+    border-radius: 4px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.box-satu input::placeholder{
+    font-size: 1rem;
+}
+.box-satu input:focus{
+    border: 1px solid;
+}
+.button-Satu{
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+.button-Satu:hover{
+    cursor: pointer;
+    background-color: black;
+}
+.button-Dua{
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 145px;
+}
+.button-Dua:hover{
+    cursor: pointer;
+    background-color: black;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junk's Futsal</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header id="head">
+      <img src="gambar/logo2.png" alt="" />
+    </header>
+    <main id="main">
+      <nav id="navigasi">
+        <ul type="none">
+          <li><a class="menu" href="index.html">Beranda</a></li>
+          <li><a class="menu" href="./utama/index.html">Daftar Booking</a></li>
+          <li><a class="menu" href="./riwayat/index.html">Riwayat Booking</a></li>
+          <li><a class="menu" id="logout" href="">LogOut</a></li>
+        </ul>
+      </nav>
+      <div id="tempat">
+        <h2 id="wl">Junks Futsal</h2>
+        <p class="info">
+          Alamat : Jl.Dakota 8A Kel. Sukaraja Kec.Cicendo Kota Bandung
+        </p>
+        <p class="info">Telp : 082246480985</p>
+      </div>
+      <div id="pembungkus">
+        <div>
+          <img class="img" src="gambar/image1.jpg" alt="" id="lap1" /><br />
+          ><span class="harga" id="text1"></span><br />
+          <span class="no_lap">Lapangan 1</span><span id="nolap1"></span>
+        </div>
+        <div>
+          <img class="img" src="gambar/image2.jpg" alt="" id="lap2" /><br />
+          ><span class="harga" id="text2"></span><br />
+          <span class="no_lap">Lapangan 2</span><span id="nolap2"></span>
+        </div>
+        <div>
+          <img class="img" src="gambar/image3.jpg" alt="" id="lap3" /><br />
+          ><span class="harga" id="text3"></span><br />
+          <span class="no_lap">Lapangan 3</span><span id="nolap3"></span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="line"></div>
+      <br />
+      <div id="copy">
+        <p>Copyright © 2023 Dwi Fauzul Ahmad Tanjung</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    fetch("/api/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if(!data){
+          location.href = "/login";
+        }
+        console.log("Berhasil");
+      });
+      document.querySelector("#log-out").addEventListener("click",async () =>{
+        await fetch("/api/logout");
+        location.href = "/login";
+      });
+
+      logout.onclick = () => {
+        fetch("/api/logout").then((response) => {
+          if (response.ok) {
+            location.href = "/login";
+          }
+        });
+      };
+  </script>
+</html>

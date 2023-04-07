@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junk's Futsal</title>
+    <link rel="stylesheet" href="/assets/login.css" />
+  </head>
+  <body>
+    <div id="pembungkus">
+      <div class="left">
+        <div id="div1">
+          <img src="../gambar/image4.jpg" alt="" />
+        </div>
+        <div id="div2">
+          <img src="../gambar/image2.jpg" alt="" />
+        </div>
+        <div id="div3">
+          <img src="../gambar/image1.jpg" alt="" />
+        </div>
+        <div id="div4">
+          <img src="../gambar/image3.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div id="pem">
+      <div class="bagian-container">
+        <p class="satu-satu">Junk's Futsal</p>
+        <div class="box-seluruh box-dua">
+          <form name="login">
+            <input type="text" placeholder="Username" name="nama" />
+            <input type="password" placeholder="Password" name="sandi" />
+            <button class="next-btn">Berikutnya</button>
+          </form>
+          <button id="next-btn">Lupa Kata Sandi</button>
+        </div>
+        <p class="dua-dua">
+          Belum Punya Akun?
+          <a href="../registrasi/index.html">Daftar</a>
+        </p>
+      </div>
+    </div>
+    <script>
+      document.login.onsubmit = async (e) => {
+        e.preventDefault();
+        const nama = document.login.nama.value;
+        const sandi = document.login.sandi.value;
+        fetch("/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nama: document.login.nama.value,
+            sandi: document.login.sandi.value,
+          }),
+        }).then(async(response)=>{
+        if (response.ok) {
+          location.href = "../";
+        } else {
+          const message = await response.text();
+          alert(message);
+        }
+        })
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <div class="kanan">
+      <div id="pembungkus1">
+        <div class="pem">
+          <p class="satu1"><b>Junk's Futsal</b></p>
+          <br />
+          <div class="box-dua">
+            <form name="booking">
+              <input class="inp" type="text" placeholder="Nama" name="nama" />
+              <input
+                class="inp"
+                type="text"
+                placeholder="Nomor Handphone"
+                name="nomor"
+              />
+              <input
+                class="inp"
+                type="text"
+                placeholder="DP Boking"
+                name="dp"
+              />
+              <button class="next-btn">Boking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.booking.onsubmit = async (e) => {
+      e.preventDefault();
+      const searchParams = new URLSearchParams(location.search);
+
+      // fetch(`/api/edit/${searchParams.get("kode")}`, {
+      //     method: "PUT",
+      //     headers: {
+      //       "Content-type" : "application/json"
+      //     },
+      //     })
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //         document.boking.nama.value = data.nama,
+      //         document.boking.nomor.value = data.no_hp,
+      //         document.boking.dp.value = data.dp_lap
+      //     });
+
+      //   fetch(`/api/edit/${searchParams.get("kode")}`, {
+      //     method: "PUT",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //         nama : document.boking.nama.value,
+      //         no_hp : document.boking.nomor.value,
+      //         dp_lap : document.boking.dp.value
+      //     }),
+      //   }).then(async (response) => {
+      //       fetch(`/api/all/${searchParams.get("kode")}`,{
+      //         method:"PUT",
+      //         headers:{
+      //           "Content-Type":"application/json",
+      //         },
+      //         body:JSON.stringify({
+      //         nama : document.boking.nama.value,
+      //         no_hp : document.boking.nomor.value,
+      //         dp_lap : document.boking.dp.value
+      //         }),
+      //       }).then(async(response)=>{
+      //         if(response.ok){
+      //           location.href="/utama";
+      //         }else{
+      //           const message = await response.text();
+      //           alert(message);
+      //         }
+      //       });
+      //   });
+
+      const nama = document.booking.nama.value;
+      const nomor = document.booking.nomor.value;
+      const dp = document.booking.dp.value;
+      const res = await fetch(`/api/${searchParams.get("lapangaBerapa")}`);
+      const data = await res.json();
+      console.log(data);
+      let waktu;
+      let harga;
+      let status;
+      let lapangKe;
+      let tersedia;
+      console.log(searchParams.get("kode"));
+      data.forEach((e) => {
+        if (searchParams.get("kode") === e.id) {
+          waktu = e.waktu;
+          harga = e.harga;
+          status = e.status;
+          lapangKe = e.no_lap;
+        }
+      });
+      await fetch(`/api/tambah/${searchParams.get("kode")}`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          nama,
+          nomor,
+          dp,
+          waktu,
+          harga,
+          status,
+          lapangKe,
+        }),
+      }).then(async (response) => {
+        alert(await response.text());
+        const lap = searchParams.get("lapangaBerapa");
+        await fetch(`/api/status/${searchParams.get("kode")}`,{
+          method : "PUT",
+          headers: {
+          "Content-type": "application/json",
+        },
+          body: JSON.stringify({
+            lap 
+          })
+        })
+        alert("ok");
+        
+      });
+
+
+    };
+  </script>
+</html>

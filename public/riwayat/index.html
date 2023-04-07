@@ -1,0 +1,122 @@
+<html>
+  <title>Junk's Futsal</title>
+  <head>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/b61c7a3473.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="head">
+      <img src="../gambar/logo2.png" alt="" />
+    </header>
+    <div>
+      <button id="scrol">
+        <i id="iconA" class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+    <main id="pmr">
+      <nav id="navigasi">
+        <ul type="none">
+          <li><a class="menu" href="../index.html">Beranda</a></li>
+          <li><a class="menu" href="../utama/index.html">Daftar Booking</a></li>
+          <li><a class="menu" href="index.html">Riwayat Booking</a></li>
+          <li><a class="menu" id="logout" href="">LogOut</a></li>
+        </ul>
+      </nav>
+      <div id="midr">
+        <div id="cfr">
+          <input id="formr" type="text" placeholder="Lapangan..." /><button
+            id="btnr"
+          >
+            Search
+          </button>
+        </div>
+        <table id="tabler">
+          <thead id="pheadr">
+            <th class="tableheadr">No.</th>
+            <th class="tablehead">Nama</th>
+            <th class="tablehead">Nomor Handphone</th>
+            <th class="tablehead">Lapangan</th>
+            <th class="tablehead">Jam Main</th>
+            <th class="tablehead">Harga</th>
+            <th class="tablehead">Dp Status</th>
+          </thead>
+          <tbody id="tbodyr"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <div id="line"></div>
+      <br />
+      <div id="copy">
+        <p>Copyright © 2023 Dwi Fauzul Ahmad Tanjung</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    logout.onclick = () => {
+      fetch("/api/logout").then((response) => {
+        if (response.ok) {
+          location.href = "/login";
+        }
+      });
+    };
+    fetch("/api/history", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const tbody = document.querySelector("tbody");
+        for (let a = 0; a < data.length; a++) {
+          const tr = document.createElement("tr");
+
+          const no = document.createElement("td");
+          no.textContent = `${a + 1}.`;
+          tr.appendChild(no);
+
+          const nama = document.createElement("td");
+          nama.textContent = data[a].nama;
+          tr.appendChild(nama);
+
+          const noHp = document.createElement("td");
+          noHp.textContent = data[a].no_hp;
+          tr.appendChild(noHp);
+
+          const namaLapangan = document.createElement("td");
+          namaLapangan.textContent = data[a].kode;
+          namaLapangan.className = "lapangan";
+          tr.appendChild(namaLapangan);
+
+          const waktu = document.createElement("td");
+          waktu.textContent = data[a].waktu;
+          tr.appendChild(waktu);
+
+          const harga = document.createElement("td");
+          harga.textContent = data[a].harga;
+          tr.appendChild(harga);
+
+          const dpLap = document.createElement("td");
+          dpLap.textContent = data[a].dp_lap;
+          tr.appendChild(dpLap);
+
+          tbody.appendChild(tr);
+        }
+      });
+
+    document.querySelector("#formr").addEventListener("input", () => {
+      const inputValue = document.querySelector("#formr").value.toLowerCase();
+      const allConteck = document.querySelectorAll("tbody>tr");
+      allConteck.forEach((e, _i) => {
+        const listItemText = e.textContent.toLowerCase();
+
+        if (listItemText.indexOf(inputValue) !== -1) {
+          e.style.display = "flex";
+        } else {
+          e.style.display = "none";
+        }
+      });
+    });
+  </script>
+</html>
