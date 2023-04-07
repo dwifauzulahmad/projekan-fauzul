@@ -10,6 +10,7 @@ const app = express();
 
 // MIDDLEWARE
 
+// Untuk membaca body berformat JSON
 app.use(express.json());
 
 // Untuk mengelola cookie
@@ -65,14 +66,15 @@ app.use((req, res, next) => {
 });
 
 // Untuk mengakses file statis
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Untuk mengakses file statis (khusus Vercel)
-// import path from "path";
-// const __dirname = path.dirname(new URL(import.meta.url).pathname);
-// app.use(express.static(path.resolve(__dirname, "public")));
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
 
-// Untuk membaca body berformat JSON
 
 // ROUTE OTORISASI
 
@@ -116,85 +118,58 @@ app.get("/api/lapangan1", async (req, res) => {
   const results = await client.query(`SELECT * FROM lapangan1 order by id`);
   res.send(results.rows);
 });
-app.put("/api/edit/:kode", async (req, res) => {
+app.put("/api/lapangan1/edit/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan1 SET nama ='${req.body.nama}', no_hp ='${req.body.no_hp}',status = 'Diboking', dp_lap = '${req.body.dp_lap}' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.put("/api/editdelete/:kode", async (req, res) => {
+app.put("/api/lapangan1/editdelete/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan1 SET nama =' ', no_hp =' ',status = 'Tersedia', dp_lap = ' ' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.delete("/api/delete/:kode", async (req, res) => {
-  await client.query(`DELETE FROM lapangan1 WHERE kode = '${req.params.kode}'`);
-  res.send("Jadwal Telah Dihapus");
-});
-// app.post("/api/all");
-// app.put("/api/all/:kode", async (req,res)=>{
-//   await client.query(
-//     `UPDATE booking SET nama ='${req.body.nama}', no_hp ='${req.body.no_hp}',status = 'Terisi', dp_lap = '${req.body.dp_lap}' WHERE kode = '${req.params.kode}'`
-//   );
-//   res.send("Data Boking Berhasil DiUpdate");
-// });
-
 
 //Lapangan 2
 app.get("/api/lapangan2", async (req, res) => {
   const results = await client.query(`SELECT * FROM lapangan2 order by id`);
   res.send(results.rows);
 });
-app.put("/api/edit/:kode", async (req, res) => {
+app.put("/api/lapangan2/edit/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan2 SET nama ='${req.body.nama}', no_hp ='${req.body.no_hp}',status = 'Diboking', dp_lap = '${req.body.dp_lap}' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.put("/api/editdelete/:kode", async (req, res) => {
+app.put("/api/lapangan2/editdelete/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan2 SET nama =' ', no_hp =' ',status = 'Tersedia', dp_lap = ' ' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.delete("/api/delete/:kode", async (req, res) => {
-  await client.query(`DELETE FROM lapangan2 WHERE kode = '${req.params.kode}'`);
-  res.send("Jadwal Telah Dihapus");
-});
-// app.put("/api/all/:kode", async (req, res) => {
-//   await client.query(
-//     `UPDATE booking SET nama ='${req.body.nama}', no_hp ='${req.body.no_hp}',status = 'Terisi', dp_lap = '${req.body.dp_lap}' WHERE kode = '${req.params.kode}'`
-//   );
-//   res.send("Data Boking Berhasil DiUpdate");
-// });
-
 
 //Lapangan 3
 app.get("/api/lapangan3", async (req, res) => {
   const results = await client.query(`SELECT * FROM lapangan3 order by id`);
   res.send(results.rows);
 });
-app.put("/api/edit/:kode", async (req, res) => {
+app.put("/api/lapangan3/edit/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan3 SET nama ='${req.body.nama}', no_hp ='${req.body.no_hp}',status = 'Diboking', dp_lap = '${req.body.dp_lap}' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.put("/api/editdelete/:kode", async (req, res) => {
+app.put("/api/lapangan3/editdelete/:kode", async (req, res) => {
   await client.query(
     `UPDATE lapangan3 SET nama =' ', no_hp =' ',status = 'Tersedia', dp_lap = ' ' WHERE kode = '${req.params.kode}'`
   );
   res.send("Data Boking Berhasil DiUpdate");
 });
-app.delete("/api/delete/:kode", async (req, res) => {
-  await client.query(`DELETE FROM lapangan3 WHERE kode = '${req.params.kode}'`);
-  res.send("Jadwal Telah Dihapus");
-});
 
 // Menambah Data Ke Table Booking sekaligus Menampilkan Riwayat Booking
 app.post("/api/tambah/:kode", async (req, res) => {
-  console.log(req.body.status);
+  // console.log(req.body.status);
   await client.query(
     `INSERT INTO booking(nama,
       no_hp,
@@ -218,4 +193,9 @@ app.put("/api/status/:id",async(req,res)=>{
   await client.query(`update ${req.body.lap} set status = 'Diboking' where id = ${req.params.id}`)
   res.status(200);
 })
+app.delete("/api/delete/:kode", async (req, res) => {
+  await client.query(`DELETE FROM booking WHERE kode = '${req.params.kode}'`);
+  res.send("Riwayat Telah Dihapus");
+});
+
 app.listen(3000, () => console.log("Berhasil Jalan"));

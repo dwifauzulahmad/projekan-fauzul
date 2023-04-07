@@ -11,8 +11,10 @@
     <div class="kanan">
       <div id="pembungkus1">
         <div class="pem">
-          <p class="satu1"><b>Junk's Futsal</b></p>
-          <br />
+          <p class="satu1">
+            <b>Junk's Futsal</b>
+          </p>
+          <img class="orang" src="../gambar/orang.png" alt="skaksa" />
           <div class="box-dua">
             <form name="booking">
               <input class="inp" type="text" placeholder="Nama" name="nama" />
@@ -30,10 +32,12 @@
               />
               <button class="next-btn">Boking</button>
             </form>
+            <button class="kembali"><a href="/utama">Kembali</a> </button>
           </div>
         </div>
       </div>
     </div>
+
   </body>
   <script>
     document.booking.onsubmit = async (e) => {
@@ -121,20 +125,17 @@
       }).then(async (response) => {
         alert(await response.text());
         const lap = searchParams.get("lapangaBerapa");
-        await fetch(`/api/status/${searchParams.get("kode")}`,{
-          method : "PUT",
+        await fetch(`/api/status/${searchParams.get("kode")}`, {
+          method: "PUT",
           headers: {
-          "Content-type": "application/json",
-        },
+            "Content-type": "application/json",
+          },
           body: JSON.stringify({
-            lap 
-          })
-        })
-        alert("ok");
-        
-      });
-
-
+            lap,
+          }),
+        });
+        // alert("ok");
+      })
     };
   </script>
 </html>

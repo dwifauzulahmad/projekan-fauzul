@@ -102,6 +102,28 @@
           tr.appendChild(dpLap);
 
           tbody.appendChild(tr);
+          const dlt = document.createElement("td");
+          const dltbutton = document.createElement("button");
+          const dltText = document.createElement("a");
+          dltbutton.appendChild(dltText);
+          dlt.appendChild(dltbutton);
+          tr.appendChild(dlt);
+          dltText.textContent = "Delete";
+          dltbutton.onclick = () => {
+            if (
+              confirm(
+                `Apakah Anda yakin ingin menghapus jadwal ${data[a].waktu} (${data[a].harga})?`
+              )
+            ) {
+              fetch(`/api/delete/${data[a].kode}`, {
+                method: "DELETE",
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              });
+              location.reload();
+            }
+          };
         }
       });
 

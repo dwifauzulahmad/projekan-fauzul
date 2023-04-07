@@ -1,443 +1,364 @@
-
-@font-face{
-    src: url('Font/KGPrimaryPenmanship.ttf');
-    font-family: MyFont;
+@font-face {
+  src: url("./font/TT\ Phobos\ Trial\ Inline.otf");
+  font-family: MyFont;
 }
-body{
-    background-image: url(/gambar/bg_body.png);
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: rgb(255, 255, 255);
+body {
+  background-image: url(/gambar/bg_body.png);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(255, 255, 255);
 }
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 /* Lapngan */
 
-#navigasi{
-    top: 0;
-    position: sticky;
+#navigasi {
+  top: 0;
+  position: sticky;
 }
 
-#head img{
-    height: 70px;
-    width: 300px;
+#head img {
+  height: 70px;
+  width: 300px;
 }
 
-#wl{
-    font-family: MyFont;
-    font-size: 40pt;
+#wl {
+  font-family: MyFont;
+  font-size: 40pt;
 }
 
-#tempat{
-    padding: 20px 30px;
-    border-radius: 0 0 5px 5px;
-    background-color: rgb(219, 218, 218);
+#tempat {
+  padding: 20px 30px;
+  border-radius: 0 0 5px 5px;
+  background-color: rgb(219, 218, 218);
 }
 
-.info{
-    font-weight: bold;
+.info {
+  font-weight: bold;
 }
 
-#pembungkus div{
-    text-align: center;
+#pembungkus div {
+  text-align: center;
 }
 
-nav ul{
-    display: flex;
-    justify-content: space-around;
-    background-color: green;
-    padding: 10px;
-    border-radius: 0 0 5px 5px;
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: green;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
 }
 
-.img:hover{
-    box-shadow: 2px 2px 5px;
-    transition: .5s;
-    cursor: pointer;
-    transform: scale(1.1);
+.img:hover {
+  box-shadow: 2px 2px 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.menu{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+.menu {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-nav ul li{
-    padding: 10px;
+nav ul li {
+  padding: 10px;
 }
 
-nav ul li:hover{
-    background-color: rgb(5, 199, 5);
-    border-radius: 5px;
+nav ul li:hover {
+  background-color: rgb(5, 199, 5);
+  border-radius: 5px;
 }
 
-nav ul li:visited{
-    background-color: rgb(5, 199, 5);
-    border-radius: 5px;
+nav ul li:visited {
+  background-color: rgb(5, 199, 5);
+  border-radius: 5px;
 }
 
-nav ul li a :hover{
-   cursor: pointer;
+nav ul li a :hover {
+  cursor: pointer;
 }
 
-#main{
-    padding:0 30px;
+#main {
+  padding: 0 30px;
 }
 
-#pembungkus{
-    padding: 30px;
-    margin-top: 10px;
-    display: flex;
-    gap: 5px;
-    border-radius: 5px;
-    background-color: rgb(211, 211, 211);
-    height: 350px;
+#pembungkus {
+  padding: 30px;
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  border-radius: 5px;
+  background-color: rgb(211, 211, 211);
+  height: 350px;
 }
 
-#pembungkus div{
-    width: 33.3%;
+#pembungkus div {
+  width: 33.3%;
 }
 
-#lap1{
-    display: block;
-    width: 100%;
-    height: 300px;
+#lap1 {
+  display: block;
+  width: 100%;
+  height: 300px;
 }
 
-#lap2{
-    display: block;
-    width:100%;
-    height: 300px;
+#lap2 {
+  display: block;
+  width: 100%;
+  height: 300px;
 }
 
-#lap3{
-    display: block; 
-    width: 100%;
-    height: 300px;
+#lap3 {
+  display: block;
+  width: 100%;
+  height: 300px;
 }
 
-.no_lap{
-    font-weight: bold;
+.no_lap {
+  font-weight: bold;
 }
 
-.harga{
-    font-weight: bold;
+.harga {
+  font-weight: bold;
 }
 
-footer{
-    margin: 10px 0;
+footer {
+  margin: 10px 0;
 }
 
-#line{
-    width: 100%;
-    border: 1px solid gray;
+#line {
+  width: 100%;
+  border: 1px solid gray;
 }
 
-#copy{
-    display: flex;
-    justify-content: center;
+#copy {
+  display: flex;
+  justify-content: center;
 }
 
 /* Booking */
-#form{
-    height: 40px;
-    width: 80%;
-    background-color: whitesmoke;
+#form {
+  height: 40px;
+  width: 80%;
+  background-color: whitesmoke;
 }
 
-#cf{
-    width: 70%;
-    margin-top: 30px;
+#cf {
+  width: 70%;
+  margin-top: 30px;
 }
 
-#cf input{
-    border-radius: 5px;
-    outline: none;
+#cf input {
+  border-radius: 5px;
+  outline: none;
 }
 
-#pilihan{
-    padding: 10px 0;
-    border: 1px solid rgb(88, 88, 88);
-    cursor: pointer;
-    margin-left: 330px;
+#pilihan {
+  padding: 10px 0;
+  border: 1px solid rgb(88, 88, 88);
+  cursor: pointer;
+  margin-left: 330px;
 }
 
-#pilihan:active{
-    outline: none;
+#pilihan:active {
+  outline: none;
 }
 
-#btn{
-    border-color: whitesmoke;
-    border-radius: 20px;
-    padding: 10px;
-    cursor: pointer;
-    margin-left: 10px;
+#btn {
+  border-color: whitesmoke;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
 }
-.tdata{
-    font-size: 15px;
-    text-align: center;
-}
-
-
-#head{
-    padding: 5px 100px;
-    background-color: rgb(6, 192, 6);
+.tdata {
+  font-size: 15px;
+  text-align: center;
 }
 
-#pm{
- padding: 0 3px;   
+#head {
+  padding: 5px 100px;
+  background-color: rgb(6, 192, 6);
 }
 
-#mid{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 30px;
-    align-items: center;
-}
-.input{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
-}
-.kiri{
-    width: 50%;
-    background-color: whitesmoke;
-    border-radius: 20px;
-}
-table{
-    margin-left: 20px;
-}
-.judul{
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-}
-.jhead th{
-    padding: 0 ;
-    height: 40px;
-    background-color: green;
-    margin-top: 10px;
-    width: 1000px;
-    border-collapse: collapse;
-}
-td{
-    width: 200px;
-    align-items: center;
-}
-.judul1{
-    color: white;
-}
-.kanan{
-    width: 50%;
-}
-#pembungkus1{
-    border-radius: 20px;
-    background-color: whitesmoke;
-    width: 350px;
-    height: 200px;
-    padding: 70px;
-}
-.pem{
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-}
-.box-dua form{
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-}
-.satu1{
-    font-size: 20pt;
-    justify-content: center;
-}
-.inp{
-    width: 300px;
-    height: 40px;
-}
-.next-btn{
-    cursor: pointer;
-    border-radius: 20px;
-    height: 40px;
-}
-.next-btn:hover{
-    background-color: grey;
-}
-.jarak1{
-    margin-left: 30px;
-}
-.jarak2{
-    margin-left: 30px;
+#pm {
+  padding: 0 3px;
 }
 
+#mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  align-items: center;
+}
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  justify-content: center;
+}
+.kiri {
+  width: 50%;
+  height: 400px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+.kata {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: medium;
+  font-family: MyFont;
+}
+.judul {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+.jhead th {
+  padding: 0;
+  height: 40px;
+  background-color: green;
+  margin-top: 10px;
+  width: 1000px;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  width: 200px;
+  align-items: center;
+}
+.judul1 {
+  color: white;
+}
 /* Riwayat */
-#formr{
-    height: 40px;
-    width: 80%;
-    background-color: whitesmoke;
+#formr {
+  height: 40px;
+  width: 80%;
+  background-color: whitesmoke;
 }
 
-#cfr{
-    width: 70%;
-    margin-top: 30px;
+#cfr {
+  width: 70%;
+  margin-top: 30px;
 }
 
-#cfr input{
-    border-radius: 5px;
-    outline: none;
+#cfr input {
+  border-radius: 5px;
+  outline: none;
 }
 
-#btnr{
-    border-color: whitesmoke;
-    border-radius: 5px;
-    padding: 10px;
+#btnr {
+  border-color: whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-#tabler{
-    margin-top: 10px;
-    width: 1000px;
-    overflow: scroll;
-    border-collapse: collapse;
+#tabler {
+  margin-top: 10px;
+  width: 1000px;
+  border-collapse: collapse;
 }
 
-.trowsr:hover{
-    background-color: gray;
-    cursor: pointer;
+.trowsr:hover {
+  background-color: gray;
+  cursor: pointer;
 }
 
-#pheadr tr{
-    height: 50px;
-    padding: 0 5px;
-    background-color: green;
+#pheadr tr {
+  height: 50px;
+  padding: 0 5px;
+  background-color: green;
 }
 
-#tbodyr tr{
-    height: 50px;
-    background-color: whitesmoke;
+#tbodyr tr {
+  height: 50px;
+  background-color: whitesmoke;
 }
 
 #tbodyr td {
-    padding-left: 50px;
+  padding-left: 50px;
 }
 
-.tdatar{
-    font-size: 15px;
-    text-align: center;
+.tdatar {
+  font-size: 15px;
+  text-align: center;
 }
 
-.tableheadr{
-    color: white;
+.tableheadr {
+  color: white;
 }
 
-#midr{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 30px;
-    align-items: center;
+#midr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  align-items: center;
 }
 
-#pmr{
-    padding: 0 30px;
+#pmr {
+  padding: 0 30px;
 }
 
-/* Transaksi */
-/* #formt{
-    height: 40px;
-    width: 80%;
-    background-color: whitesmoke;
+/* css edit */
+.kanan {
+  margin-top: 100px;
+  justify-content: center;
+  display: flex;
 }
-
-#cft{
-    width: 70%;
-    margin-top: 30px;
+#pembungkus1 {
+  border-radius: 20px;
+  background-color: whitesmoke;
+  width: 280px;
+  height: 270px;
+  padding: 60px;
 }
-
-#cft input{
-    border-radius: 5px;
-    outline: none;
+.pem {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
 }
-
-#btnt{
-    border-color: whitesmoke;
-    border-radius: 5px;
-    padding: 10px;
+.box-dua form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
 }
-
-#tablet{
-    margin-top: 10px;
-    width: 1000px;
-    overflow: scroll;
-    border-collapse: collapse;
+.satu1 {
+  font-size: 20pt;
+  justify-content: center;
+  font-family: MyFont;
 }
-
-.trowst:hover{
-    background-color: gray;
-    cursor: pointer;
+.inp {
+  width: 300px;
+  height: 40px;
 }
-
-#pheadt tr{
-    height: 50px;
-    padding: 0 5px;
-    background-color: green;
+.next-btn {
+  cursor: pointer;
+  border-radius: 20px;
+  height: 40px;
 }
-
-#tbodyt tr{
-    height: 50px;
+.next-btn:hover {
+  background-color: grey;
 }
-
-.tdatat{
-    font-size: 15px;
-    text-align: center;
+#pem2{
+    height: 30px;
 }
-
-.tableheadt{
-    color: white;
-}
-
-#midt{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 30px;
-    align-items: center;
-}
-
-#pmt{
-    padding: 0 30px;
-} */
-
-/* Scroll */
-
-#scrol{
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 20px;
-    height: 20px;
-    opacity: 0;
-    background: none;
-    border: none;
-}
-#scrol:hover{
-    cursor: pointer;
-}
-#scrol.active{
-    opacity: 1;
-}
-#iconA{
-    font-size: 20pt;
+.orang {
+  width: 80px;
+  height: 80px;
 }
