@@ -323,8 +323,8 @@ td {
 #pembungkus1 {
   border-radius: 20px;
   background-color: whitesmoke;
-  width: 280px;
-  height: 270px;
+  width: 260px;
+  height: 300px;
   padding: 60px;
 }
 .pem {
@@ -349,6 +349,7 @@ td {
 }
 .next-btn {
   cursor: pointer;
+  width: 300px;
   border-radius: 20px;
   height: 40px;
 }
@@ -361,4 +362,13 @@ td {
 .orang {
   width: 80px;
   height: 80px;
+}
+#tombol{
+  display: flex;
+  flex-direction: column;
+}
+.kembali{
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 200px;
 }
